@@ -27,6 +27,6 @@ class ExampleTest extends TestCase
     public function testWeCanSeeSpecificContact()
     {
     	$oContact = createOne('App\Contact', ['user_id' => $this->oUser->id]);
-        $this->get('/contacts')->assertSee($oContact->name);
+        $this->get('/contacts')->assertSee($oContact->phone);
     }
 }
