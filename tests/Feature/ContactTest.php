@@ -23,9 +23,15 @@ class ExampleTest extends TestCase
         $this->get('/contacts')->assertStatus(200);
     }
 
+    public function testWeCanGetCreateContactPage()
+    {
+        $this->get('/contacts/create')->assertStatus(200);
+    }
+
     public function testWeCanSeeSpecificContact()
     {
     	$oContact = createOne('App\Contact', ['user_id' => $this->oUser->id]);
         $this->get('/contacts')->assertSee($oContact->phone);
     }
+
 }

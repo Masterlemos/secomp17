@@ -23,12 +23,12 @@
 									<tr>
 										<td><a href="/contacts/{{$oContact->id}}">{{$oContact->name}}</a></td>
 										<td><a href="/contacts/{{$oContact->id}}">{{$oContact->phone}}</a></td>
-										<td><a href="/contacts/{{$oContact->id}}">{{$oContact->age}}</a></td>
+										<td><a href="/contacts/{{$oContact->id}}">{{$oContact->email}}</a></td>
 									</tr>
 								@endforeach
 							</tbody>
 						</table>
-						<a href="/contacts/create" class="btn btn-success">Create</a>
+						<a href="/contacts/create" class="btn btn-success">New Contact</a>
 	                </div>
 	            </div>
 	        </div>
