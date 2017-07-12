@@ -31,6 +31,13 @@ class ContactController extends Controller
         return view('contacts.edit', compact('contact'));
     }
 
+    public function destroy(Contact $contact) {
+        if ($contact->delete()) {
+            return redirect('/contacts')->with('status', "Contato <strong>{$contact->name}</strong> apagado!");
+        }
+        return redirect('/contacts')->with('error', 'Contato não foi apagado!');
+    }
+
     public function update(ContactRequest $oRequest, Contact $contact) {
         $contact->user_id = Auth::user()->id;
         $contact->fill($oRequest->all());

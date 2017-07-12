@@ -8,8 +8,8 @@
 	                <div class="panel-heading">Contacts</div>
 
 	                <div class="panel-body">
-						<p>{{session('status')}}</p>
-						<p>{{session('error')}}</p>
+						<p>{!! session('status') !!}</p>
+						<p>{!! session('error') !!}</p>
 						<table class="table table-striped">
 							<thead>
 								<tr>

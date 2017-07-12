@@ -5,7 +5,7 @@
 	    <div class="row">
 	        <div class="col-md-10">
 	            <div class="panel panel-default">
-	                <div class="panel-heading">Mostrar Contato</div>
+	                <div class="panel-heading">Atualizar Contato</div>
 	                <div class="panel-body">
 	                	<div class="form-group">
 				            <div class="col-md-6 col-md-offset-4">
@@ -47,7 +47,7 @@
 
 						 	<div class="form-group">
 				                <div class="col-md-6 col-md-offset-4">
-				                    <input type="submit" value="Editar Contato" class="btn btn-success" />
+				                    <input type="submit" value="Atualizar Contato" class="btn btn-warning" />
 				                </div>
 				            </div>
 						</form>

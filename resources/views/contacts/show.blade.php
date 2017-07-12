@@ -7,7 +7,10 @@
 	            <div class="panel panel-default">
 	                <div class="panel-heading">Mostrar Contato</div>
 	                <div class="panel-body">
-						<form id="create-form" class="form-horizontal" role="form" method="POST" action="/contacts">
+						<form id="create-form" class="form-horizontal" role="form" method="POST" action="/contacts/{{$contact->id}}">
+							{{method_field('DELETE')}}
+							{{csrf_field()}}
+
 							<div class="form-group">
 								<label for="name" class="col-md-4 control-label">Name</label>
 
@@ -34,7 +37,8 @@
 
 						 	<div class="form-group">
 				                <div class="col-md-6 col-md-offset-4">
-				                    <a href="/contacts/{{$contact->id}}/edit" class="btn btn-success">Editar Contato</a>
+				                    <a href="/contacts/{{$contact->id}}/edit" class="btn btn-info">Editar Contato</a>
+				                    <input type="submit" class="btn btn-danger" value="Apagar" />
 				                </div>
 				            </div>
 						</form>
