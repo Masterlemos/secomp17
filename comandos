@@ -1,0 +1,50 @@
+//model
+public $timestamps = false;
+protected $fillable = [
+        'data', 'subject', 'body'
+];
+sudo apt-get install php-sqlite
+php artisan make:controller ContactsController
+
+php artisan make:migration create_contacts_table --create=contacts
+
+php artisan make:model Contact -m
+php artisan make:request ContactRequest
+
+
+//desfaz a ultima alteração - para drop de column add a lib: composer require doctrine/dbal
+php artisan migrate:rollback
+php artisan migrate
+
+php artisan make:auth
+
+php artisan make:mail Welcome --markdown="emails.welcome"
+factory(App\User::class, 10)->create(['user_id'])
+
+#import style mail
+php artisan vendor:publish --tag="laravel-mail"
+
+//em manutencao
+php artisan down
+php artisan route:cache
+
+
+--para o tinker logar sql
+DB::listen(function($query){var_dump($query->sql); } );
+
+
+primeiramente 
+	sudo apt-get install npm
+
+npm update
+    sudo npm cache clean -f 
+    sudo npm install -g n
+    sudo n stable
+    primeiramente 
+    npm install
+    
+
+npm run dev
+npm run watch
+npm run production
+    
