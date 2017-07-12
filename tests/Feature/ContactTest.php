@@ -20,8 +20,7 @@ class ExampleTest extends TestCase
 
     public function testWeCanGetContacts()
     {
-        $this->get('/contacts')
-        ->assertStatus(200);
+        $this->get('/contacts')->assertStatus(200 );
     }
 
     public function testWeCanSeeSpecificContact()
