@@ -13,7 +13,7 @@
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          Contatos <span class="caret"></span><span class="new-menu-item pull-right hidden-xs showopacity glyphicon glyphicon-tree-deciduous"></span></a>
+          Contatos <span class="caret"></span><span class="new-menu-item pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a>
 
           <ul class="dropdown-menu forAnimate" role="menu">
             <li><a href="/contacts">
