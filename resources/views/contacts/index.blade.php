@@ -1,14 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+	<div class="container">
+	    <div class="row">
+	        <div class="col-md-10">
+	            <div class="panel panel-default">
+	                <div class="panel-heading">Contacts</div>
 
-                <div class="panel-body">
-                    <div>
+	                <div class="panel-body">
 						<p>{{session('status')}}</p>
 						<p>{{session('error')}}</p>
 						<table class="table table-striped">
@@ -30,10 +29,9 @@
 							</tbody>
 						</table>
 						<a href="/contacts/create" class="btn btn-success">Create</a>
-					</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
 @endsection
