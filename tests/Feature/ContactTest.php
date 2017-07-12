@@ -34,4 +34,18 @@ class ExampleTest extends TestCase
         $this->get('/contacts')->assertSee($oContact->phone);
     }
 
+    public function testWeCanCreateContact() {
+        $this->post('/contacts', ['name' => 'Testeabsurdo', 'phone'=>'4434', 'email' => 'a@teste.com']);
+        $this->get('/contacts')->assertSee('Testeabsurdo');   
+    }
+
+    public function testWeCanSeeShowContactPage() {
+        $oContact = createOne('App\Contact', ['user_id' => $this->oUser->id]);
+        $this->get('/contacts/1')->assertSee($oContact->name);
+    }
+
+    public function testWeCanSeeEditContactPage() {
+        $oContact = createOne('App\Contact', ['user_id' => $this->oUser->id]);
+        $this->get('/contacts/1/edit')->assertSee($oContact->name);
+    }
 }
