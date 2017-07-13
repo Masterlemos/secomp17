@@ -15,7 +15,7 @@
 						<form id="create-form" class="form-horizontal" role="form" method="POST" action="/contacts/{{$contact->id}}">
 							{{csrf_field()}}
 							{{method_field('PATCH')}}
-							<input type="hidden" value="{{$contact->id}}" name="id" />
+							
 							<div class="form-group">
 								<label for="name" class="col-md-4 control-label">Name</label>
 

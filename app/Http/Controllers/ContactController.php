@@ -15,7 +15,8 @@ class ContactController extends Controller
     }
 
     public function index() {
-    	$cContacts = Contact::all();
+    	$cContacts = Contact::name(request()->get('name'))
+        ->email(request()->get('email'))->simplePaginate(5);
     	return view('contacts.index', compact('cContacts'));
     }
 

@@ -10,6 +10,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class ExampleTest extends TestCase
 {
     use DatabaseMigrations;
+
     private $oUser;
 
     public function setUp() {
@@ -47,5 +48,17 @@ class ExampleTest extends TestCase
     public function testWeCanSeeEditContactPage() {
         $oContact = createOne('App\Contact', ['user_id' => $this->oUser->id]);
         $this->get('/contacts/1/edit')->assertSee($oContact->name);
+    }
+
+    public function testWeCanUpdateContact() {
+        $oContact = createOne('App\Contact', ['user_id' => $this->oUser->id]);
+        $this->patch('/contacts/'.$this->oUser->id, ['name' => 'Secomp', 'phone'=>'4434', 'email' => 'a@teste.com']);
+        $this->get("/contacts/{$this->oUser->id}/edit")->assertSee('Secomp');
+    }
+
+    public function testWeCanDeleteContact() {
+        $oContact = createOne('App\Contact', ['user_id' => $this->oUser->id]);
+        $this->delete('/contacts/'.$this->oUser->id);
+        $this->get("/contacts/{$this->oUser->id}/edit")->assertStatus(404);
     }
 }
