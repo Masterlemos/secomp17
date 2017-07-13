@@ -29,6 +29,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
+                        <img src="{{url('/images/icon.png')}}" style="height: 32px; display: inline-block; margin-top: -5px">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
@@ -41,10 +42,16 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
+
+                        @if (Session::get('locale') == 'en')
+                            <li><a href="/local/pt-br">Pt-Br</a></li>
+                        @else
+                            <li><a href="/local/en">Eng</a></li>
+                        @endif
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}">{{Lang::get('words.login')}}</a></li>
+                            <li><a href="{{ route('register') }}">{{Lang::get('words.register')}}</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

@@ -1,4 +1,6 @@
 <?php
+Route::get('/local/{id}', 'LocalController@setLocal');
+
 Route::get('/', function () {
     return view('welcome');
 });
