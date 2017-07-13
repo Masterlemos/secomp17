@@ -8,15 +8,29 @@ use App\Contact;
 use App\Http\Requests\ContactRequest;
 use Auth;
 
+use App\Filters\ContactsFilters;
+
 class ContactController extends Controller
 {
     public function __construct() {
     	$this->middleware('auth');
     }
 
-    public function index() {
-    	$cContacts = Contact::name(request()->get('name'))
-        ->email(request()->get('email'))->simplePaginate(5);
+    /**
+     * Refactoring
+     */
+    /**
+     * 
+     
+    public function indexOld() {
+        $cContacts = Contact::name(request()->get('name'))->email(request()->get('email'))
+        ->simplePaginate(5);
+        return view('contacts.index', compact('cContacts'));
+    }
+    */
+
+    public function index(ContactsFilters $filters) {
+    	$cContacts = Contact::filter($filters)->simplePaginate(5);
     	return view('contacts.index', compact('cContacts'));
     }
 

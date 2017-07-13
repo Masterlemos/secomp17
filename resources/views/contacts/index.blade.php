@@ -14,7 +14,7 @@
 						<p>{!! session('error') !!}</p>
 
 						<form method="GET" action="/contacts">
-							{{csrf_field()}}
+							
 							<div class="col-md-12">
 								<div class="col-md-4">
 									<label for="name">Name</label>
