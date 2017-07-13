@@ -7,3 +7,6 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/contacts', 'ContactController');
+
+Route::get('/contacts-ajax', 'ContactController@viewAjax');
+Route::get('/getAllAjax', 'ContactController@getAllAjax');

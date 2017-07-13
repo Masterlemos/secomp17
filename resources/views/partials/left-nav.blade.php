@@ -24,19 +24,8 @@
         </li>
 
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          Agenda <span class="caret"></span><span class="new-menu-item pull-right hidden-xs showopacity glyphicon glyphicon-calendar"></span></a>
+        <li ><a href="/contacts-ajax">Contatos Ajax<span class="new-menu-item pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
 
-          <ul class="dropdown-menu forAnimate" role="menu">
-            <li><a href="/eventos">
-             Eventos</a></li>
-            <li><a href="/eventos/create">
-            Novo Evento </a></li>
-          </ul>
-        </li>
-
-        <li ><a href="/dizimo">Amigos<span class="new-menu-item pull-right hidden-xs showopacity glyphicon glyphicon-plus"></span></a></li>
 
         <li ><a href="/videos/create">V&iacute;deos<span class="new-menu-item pull-right hidden-xs showopacity glyphicon glyphicon-play"></span></a></li>
 

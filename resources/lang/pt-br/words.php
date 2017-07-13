@@ -1,5 +1,6 @@
 <?php
 return [
 	'login' => 'Entrar',
-	'register' => 'Registrar'
+	'register' => 'Registrar',
+	'contacts' => 'Contatos'
 ];

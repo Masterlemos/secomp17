@@ -6,10 +6,10 @@
 	        <div class="col-md-10">
 	            <div class="panel panel-default" >
 	                <div class="panel-heading">
-	                	{{Lang::get('words.contacts')}}
+	                	Contatos
 	                </div>
 
-	                <div class="panel-body">
+	                <div class="panel-body" id="app">
 						<p>{!! session('status') !!}</p>
 						<p>{!! session('error') !!}</p>
 
@@ -46,16 +46,19 @@
 									</tr>
 								</thead>
 								<tbody>
-									@foreach($cContacts as $oContact)
-										<tr>
-											<td><a href="/contacts/{{$oContact->id}}">{{$oContact->name}}</a></td>
-											<td><a href="/contacts/{{$oContact->id}}">{{$oContact->phone}}</a></td>
-											<td><a href="/contacts/{{$oContact->id}}">{{$oContact->email}}</a></td>
-										</tr>
-									@endforeach
+									<tr v-for="contact in contacts">
+										<td><a :href="url+'/'+contact.id">@{{contact.name}}</a></td>
+										<td><a :href="url+'/'+contact.id">@{{contact.phone}}</a></td>
+										<td><a :href="url+'/'+contact.id">@{{contact.email}}</a></td>
+									</tr>
 								</tbody>
 							</table>
-							<center>{{$cContacts->links()}}</center>
+							<center>
+								<ul class="pagination">
+									<li><a @click="prevPage($event)" :href="prev">&laquo; Previous</a></li>
+                    				<li><a @click="nextPage($event)" :href="next">Nextt &raquo;</a></li>
+            					</ul>
+							</center>
 						</div>
 	                </div>
 	            </div>

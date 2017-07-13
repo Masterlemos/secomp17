@@ -34,6 +34,15 @@ class ContactController extends Controller
     	return view('contacts.index', compact('cContacts'));
     }
 
+    public function viewAjax() {
+        return view('contacts-ajax.index');
+    }
+
+    public function getAllAjax(ContactsFilters $filters) {
+        $cContacts = Contact::filter($filters)->simplePaginate(5);
+        return response()->json($cContacts);
+    }
+
     public function create() {
     	return view('contacts.create');
     }
