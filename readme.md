@@ -9,7 +9,7 @@
 
 ## Secomp 2017 - Desenvolvimento Web com Laravel - Por Aldo Lemos
 
-Laravel é um framework web com sintaxe expressiva e elegante. Neste repositório ficará a app esqueleto desenvolvida no curso.
+Laravel é um framework web com sintaxe expressiva e elegante. Neste repositório ficará o app esqueleto desenvolvido no curso.
 
 ## License
 
